@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window object</title>
+</head>
+<!-- bom model history and resize -->
+<script>
+    var w;
+    function ope() {
+        w = window.open("", "", width = "300px", hight = "200px");
+    }
+    function clo() {
+        w.close();
+    }
+    function mt() {
+        w.moveTo(50, 50);
+    }
+    function mb() {
+        w.moveBy(50, 50);
+    }
+    function rt() {
+        w.resizeTo(50, 50);
+    }
+    function rb() {
+        w.resizeBy(50, 50);
+    }
+    function resizeofwindow() {
+        let widt = window.outerWidth;
+        let h = window.outerHeight;
+        let txt = "Window size: width=" + widt + ", height=" + h;
+        document.getElementById("demo").innerHTML = txt;
+    }
+    // function resizeofwindow(){
+    //     document.write("inner higth:"+window.innerHeight+"<br>");
+    //     document.write("outer higth:"+window.innerHeight+"<br>");
+    //     document.write("inner wigth:"+window.innerWidth+"<br>");
+    //     document.write("outer width:"+window.innerWidth+"<br>");
+    // }
+    function bk() {
+        history.back(1);
+    }
+    function fr() {
+        history.forward();
+    }
+    function goo() {
+        history.go(2);
+    }
+</script>
+
+<body onresize="resizeofwindow()" id="demo">
+    <button onclick="ope()">open</button>
+    <button onclick="clo()">close</button>
+    <button onclick="mt()">moveTo</button>
+    <button onclick="mb()">moveBy</button>
+    <button onclick="rt()">resizeTo</button>
+    <button onclick="rb()">resizeBy</button>
+    <button onclick="resizeofwindow()">resize</button>
+    <button onclick="bk()">back history</button>
+    <button onclick="fr()">forwerd history</button>
+    <button onclick="goo()">goo history</button>
+</body>
+
+</html>
