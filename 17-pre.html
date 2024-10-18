@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" style="width: 10rem; background-color: blue; height: 2rem;" onclick="fun()">button</button>
+    <script>
+        function fun(){
+        fetch("https://jsonplaceholder.typicode.com/users").then((res)=>{
+   return res.json();
+      
+}).then((data)=>{
+//    document.write(data);
+   console.log(data);
+   for(i in data){
+    document.write(data[i].name +"--------"+data[i].email+"----"+data[i].username+"<br>" );
+}
+}) 
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+    <script>
+    const city ="alwar";
+    const API ="a01734e41184f1c990b2fe3bb1fc1b4e"
+        function fun(){
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}`).then((res)=>{
+            return res.json();
+        }).then((data)=>{
+  // document.write(data);
+        console.log(data);
+        for(i in data){
+        console.log(data[i].temp+"----"+data[i].deg+"----"+data[i].gust+"----"+data[i].speed+"<br>" );
+      }
+      }) 
+      }
+</script>
+<body>
+  <button 
+  type="button"
+   style="width: 10rem;
+    background-color: rgb(175, 175, 215);
+    height: 2rem;
+    font-size: large;
+    " onclick="fun()">button</button>
+</body>
+</html>

@@ -1,0 +1,1 @@
+import {a,fun} from "./fil1.js"
